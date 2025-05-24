@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: rgb(255, 255, 255);
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(to right, #3c3b3b, #000000);
+    padding: 20px 0;
+    position: relative;
+}
+
+.menu.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo-img {
+    height: 60px; 
+}
+
+.menu-icono {
+    width: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Ocultar checkbox */
+#menu {
+    display: none;
+}
+
+/* Menú oculto por defecto */
+.navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background-color: #000000;
+    padding: 20px;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    text-align: left; /* Alinea el texto del menú a la izquierda */
+}
+
+/* Mostrar menú cuando está activo */
+#menu:checked ~ .navbar {
+    display: block;
+}
+
+/* Lista de navegación */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin-bottom: 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ff4081;
+}
+
+main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+
+@media (max-width: 991px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .menu-icono {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(
+            90deg,
+            rgba(203, 18, 133, 1) 0%,
+            rgba(80, 49, 145, 1) 70%
+        );
+        margin-top: 10px;
+    }
+
+    input[type="checkbox"]:checked + label + .navbar {
+        display: flex;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        padding: 15px 20px;
+    }
+}
+
+pre code {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    display: block;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
